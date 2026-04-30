@@ -282,6 +282,7 @@ function Navbar({ activeSection, onNavigate }) {
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
+    { id: "get-cv", label: "Get CV" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -450,7 +451,7 @@ function HeroSection({ onNavigate }) {
               View My Work
             </motion.a>
             <motion.a
-              href="/Brijesh_CV.pdf"
+              href="./Brijesh_CV.pdf"
               download="Brijesh_K_Yadav_CV.pdf"
               className="interactive px-8 py-4 rounded-2xl bg-gradient-to-r from-electric-blue to-neon-purple font-semibold text-white hover:shadow-glow-cyan transition-all"
               whileHover={{ scale: 1.05 }}
@@ -795,6 +796,132 @@ function ProjectsSection() {
   );
 }
 
+function GetCVSection() {
+  return (
+    <section id="get-cv" className="py-24 px-6 bg-gradient-to-b from-space/80 to-space">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center"
+        >
+          <h2 className="text-4xl font-bold font-display mb-4 gradient-text">Get My CV</h2>
+          <p className="text-gray-400 text-center mb-12">
+            Preview and download my complete curriculum vitae
+          </p>
+
+          {/* CV Preview Card */}
+          <motion.div
+            className="glass-card rounded-3xl p-8 mb-8"
+            whileHover={{ scale: 1.02 }}
+          >
+            {/* CV Document Preview */}
+            <div className="bg-white/5 rounded-2xl p-6 mb-6">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-electric-blue to-neon-purple flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-xl font-bold text-white">Brijesh K. Yadav - CV</h3>
+                  <p className="text-sm text-gray-400 mt-1">Software Engineer | Kathmandu, Nepal</p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Full Stack Developer specializing in C#/.NET, PHP/Laravel, and modern web technologies
+                  </p>
+                </div>
+              </div>
+
+              {/* CV Sections Preview */}
+              <div className="grid sm:grid-cols-2 gap-4 text-left">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-electric-blue" />
+                    <span>Professional Summary</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-electric-blue" />
+                    <span>Work Experience</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-electric-blue" />
+                    <span>Education</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-neon-purple" />
+                    <span>Technical Skills</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-neon-purple" />
+                    <span>Projects</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className="w-2 h-2 rounded-full bg-neon-purple" />
+                    <span>Certifications</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Download Button */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="./Brijesh_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="interactive px-6 py-3 rounded-xl glass-card border border-electric-blue/30 text-electric-blue font-semibold hover:bg-electric-blue/10 transition-all flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Preview CV
+              </a>
+              <a
+                href="./Brijesh_CV.pdf"
+                download="Brijesh_K_Yadav_CV.pdf"
+                className="interactive px-6 py-3 rounded-xl bg-gradient-to-r from-electric-blue to-neon-purple text-white font-semibold hover:shadow-glow-cyan transition-all flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download CV
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Quick Stats */}
+          <div className="grid sm:grid-cols-3 gap-4">
+            <motion.div
+              className="glass-card rounded-2xl p-5"
+              whileHover={{ scale: 1.05 }}
+            >
+              <p className="text-3xl font-bold text-electric-blue">3+</p>
+              <p className="text-sm text-gray-400 mt-1">Years Experience</p>
+            </motion.div>
+            <motion.div
+              className="glass-card rounded-2xl p-5"
+              whileHover={{ scale: 1.05 }}
+            >
+              <p className="text-3xl font-bold text-neon-purple">10+</p>
+              <p className="text-sm text-gray-400 mt-1">Projects Completed</p>
+            </motion.div>
+            <motion.div
+              className="glass-card rounded-2xl p-5"
+              whileHover={{ scale: 1.05 }}
+            >
+              <p className="text-3xl font-bold text-electric-blue">BSc</p>
+              <p className="text-sm text-gray-400 mt-1">Computer Science</p>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -1069,6 +1196,7 @@ export default function App() {
             <SkillsSection />
             <ExperienceSection />
             <ProjectsSection />
+            <GetCVSection />
             <ContactSection />
           </main>
           <Footer />
